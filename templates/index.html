@@ -4,11 +4,15 @@
 <html>
 <head>
     <title>Random Quote App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Random Quote:</h1>
-    <blockquote>
-        <p>{{ quote }}</p>
-    </blockquote>
+    <div class="container">
+        <h1>Random Quote</h1>
+        <blockquote>
+            <p>{{ quote }}</p>
+        </blockquote>
+        <button onclick="window.location.reload();">Get Another Quote</button>
+    </div>
 </body>
 </html>
