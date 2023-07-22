@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
         - name: random-quote-app
-          image: mydadisalive/quote-app:latest  # Correct image reference
+          image: mydadisalive/random-quote-app:latest  # Correct image reference
           ports:
             - containerPort: 5000
 
 ---
-# Service YAML
+# Service YAML (using NodePort type)
 apiVersion: v1
 kind: Service
 metadata:
@@ -34,4 +34,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-  type: LoadBalancer  # Change to "ClusterIP" if you're using a local Kubernetes cluster
+  type: NodePort  # Use NodePort instead of LoadBalancer
